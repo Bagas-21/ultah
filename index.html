@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 60px;
+      animation: fadeInDown 2s ease;
+    }
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      animation: fadeIn 3s ease;
+    }
+    img.kucing {
+      margin-top: 20px;
+      max-width: 300px;
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      animation: fadeIn 4s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      opacity: 0.7;
+      animation: fall 4s infinite ease-in;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Selamat Ulang Tahun, Andana! 🎉</h1>
+  <p>Semoga sehat selalu, makin sukses, dan semua impianmu tercapai! 🎁</p>
+
+  <img class="kucing" src="catBday/download (1).jpg" alt="Kucing lucu" />
+
+  <script>
+    // Bikin konfeti
+    for(let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = Math.random() * -100 + 'vh';
+      confetti.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
